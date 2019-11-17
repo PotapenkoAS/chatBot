@@ -1,5 +1,6 @@
 package com.example.chat_bot
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -17,7 +18,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
+        getInstitutesFromServer(this)
         signUp.setOnClickListener {
             val email = email.text.toString()
             val password = password.text.toString()
@@ -28,22 +29,9 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    fun getInstitutesFromServer(): List<Institute> {
-        lateinit var conn: HttpURLConnection
-        try {
-            val url = URL("${R.string.server_base_url}catalog/institutes")
-            conn.connectTimeout = 1000
-            conn.requestMethod = "POST"
-            conn.connect()
-            if(conn.responseCode==200){
-                val result = ArrayList<Institute>()
-            }
-
-        } catch (e: Exception) {
-            e.printStackTrace()
-        }finally {
-            conn.disconnect()
-        }
-
+    fun getInstitutesFromServer(context: Context): List<Institute> {
+        val restHelper = RestHelper()
+        restHelper.doRequest(context)
+        return ArrayList()
     }
 }

@@ -1,7 +1,6 @@
 <resources>
     <string name="app_name">Chat_bot</string>
-    <string name="server_base_url">192.168.1.43:8080/rest/</string>
-
+    <string name="server_base_url">http://192.168.1.43:8080/rest</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="chat_bot_vlsu">Chat-bot VLSU</string>
