@@ -1,4 +1,7 @@
 package com.example.chat_bot.model
 
-class Institute(private var id: Int, private var shortName: String, private var fullName: String) {
-}
+data class Institute(
+    val id: Int,
+    val shortName: String,
+    val fullName: String
+)
