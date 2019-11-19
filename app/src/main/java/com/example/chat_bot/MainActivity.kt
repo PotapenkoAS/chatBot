@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
             val email = login.text.toString()
             val password = password.text.toString()
             Log.d("MainActivity", "Email is $email, password is $password")
-            val intent = Intent(this, HostActivity::class.java)
+            val intent = Intent(this, RegistrationFirstStepActivity::class.java)
             startActivity(intent)
         }
     }
