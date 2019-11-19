@@ -5,6 +5,7 @@ import io.reactivex.Single
 import retrofit2.http.GET
 
 interface ApiHelper {
-    @GET("/catalog/institutes")
+
+    @GET("catalog/institutes")
     fun getInstitutes(): Single<List<Institute>>
 }
