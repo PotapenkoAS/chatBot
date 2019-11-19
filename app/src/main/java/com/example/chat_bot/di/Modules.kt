@@ -1,6 +1,7 @@
 package com.example.chat_bot.di
 
-import com.example.chat_bot.api.SERVER_BASE_URL
+import com.example.chat_bot.SERVER_BASE_URL
+import com.example.chat_bot.data.net.CatalogService
 import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
@@ -13,5 +14,6 @@ val netModule = module {
             .addConverterFactory(GsonConverterFactory.create())
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .build()
+            .create(CatalogService::class.java)
     }
 }

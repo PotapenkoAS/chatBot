@@ -13,10 +13,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         signUp.setOnClickListener {
-            val email = email.text.toString()
+            val email = login.text.toString()
             val password = password.text.toString()
             Log.d("MainActivity", "Email is $email, password is $password")
-            val intent = Intent(this, RegisterActivity::class.java)
+            val intent = Intent(this, HostActivity::class.java)
             startActivity(intent)
         }
     }
